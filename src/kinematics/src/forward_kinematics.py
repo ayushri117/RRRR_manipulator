@@ -16,10 +16,10 @@ def tf_matrix(dh):
     return tf
 def callback(msg):
     joints=msg.position
-    dh_table=numpy.matrix([[0,0,joints[5],120],
-                          [1.57079633,0,joints[2],0],
-                          [0,500,joints[1],0],
-                          [0,300,joints[0],0],
+    dh_table=numpy.matrix([[0,0,joints[0],120],
+                          [1.57079633,0,joints[3],0],
+                          [0,500,joints[4],0],
+                          [0,300,joints[5],0],
                           [0,45,0,0]])
     transformation_matrix=numpy.identity(4)
     for val in dh_table:
