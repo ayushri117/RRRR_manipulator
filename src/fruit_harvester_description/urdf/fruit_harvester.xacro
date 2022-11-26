@@ -1,0 +1,250 @@
+<?xml version="1.0" ?>
+<robot name="fruit_harvester" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find fruit_harvester_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find fruit_harvester_description)/urdf/fruit_harvester.trans" />
+<xacro:include filename="$(find fruit_harvester_description)/urdf/fruit_harvester.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-2.141483605028195e-16 -3.6379137549613626e-17 0.0040000000000000105" rpy="0 0 0"/>
+    <mass value="14.300000000000002"/>
+    <inertia ixx="0.297993" iyy="0.297993" izz="0.595833" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fruit_harvester_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fruit_harvester_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="holder__1">
+  <inertial>
+    <origin xyz="5.5951482468685754e-06 2.1636982915662627e-06 0.021279248953684275" rpy="0 0 0"/>
+    <mass value="14.078041686781889"/>
+    <inertia ixx="0.123973" iyy="0.12451" izz="0.212985" ixy="2e-06" iyz="1e-06" ixz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 0.0 -0.008" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fruit_harvester_description/meshes/holder__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.0 -0.008" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fruit_harvester_description/meshes/holder__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="grip2_1">
+  <inertial>
+    <origin xyz="0.05364907931834284 -0.02177509227632217 0.007117236322113529" rpy="0 0 0"/>
+    <mass value="0.08498904911563737"/>
+    <inertia ixx="4e-05" iyy="0.000276" izz="0.000311" ixy="7.8e-05" iyz="6e-06" ixz="-1.9e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.937608 0.04828 -0.126" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fruit_harvester_description/meshes/grip2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.937608 0.04828 -0.126" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fruit_harvester_description/meshes/grip2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="grip1_1">
+  <inertial>
+    <origin xyz="0.05628094029691155 0.02405132735074406 0.0073051016420821735" rpy="0 0 0"/>
+    <mass value="0.2152423048382853"/>
+    <inertia ixx="0.000116" iyy="0.000682" izz="0.000786" ixy="-0.000222" iyz="-1.8e-05" ixz="-4.7e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.937608 -0.00572 -0.126" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fruit_harvester_description/meshes/grip1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.937608 -0.00572 -0.126" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fruit_harvester_description/meshes/grip1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="cam_1">
+  <inertial>
+    <origin xyz="-0.21905808410448313 -1.2961445784866052 1.5456263497834213" rpy="0 0 0"/>
+    <mass value="0.32739564469380616"/>
+    <inertia ixx="0.000252" iyy="2.4e-05" izz="0.00025" ixy="2e-06" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-1.04719 -1.274 1.374455" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fruit_harvester_description/meshes/cam_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-1.04719 -1.274 1.374455" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fruit_harvester_description/meshes/cam_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link_1_1">
+  <inertial>
+    <origin xyz="0.20464533177189914 0.049054440594275474 -0.0003731414926899379" rpy="0 0 0"/>
+    <mass value="8.14858833077929"/>
+    <inertia ixx="0.022502" iyy="0.25306" izz="0.261723" ixy="0.002387" iyz="0.000318" ixz="0.001677"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 0.04995 -0.12" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fruit_harvester_description/meshes/link_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 0.04995 -0.12" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fruit_harvester_description/meshes/link_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="grip_base_1">
+  <inertial>
+    <origin xyz="0.07320818005315011 0.0015701009661991325 1.5001888620247428e-14" rpy="0 0 0"/>
+    <mass value="0.7312652454578921"/>
+    <inertia ixx="0.000377" iyy="0.000942" izz="0.001302" ixy="4.1e-05" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.86 0.02195 -0.12" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fruit_harvester_description/meshes/grip_base_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.86 0.02195 -0.12" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fruit_harvester_description/meshes/grip_base_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link_2_1">
+  <inertial>
+    <origin xyz="0.15851248323244505 -0.03327454899353218 -0.0002043351344011013" rpy="0 0 0"/>
+    <mass value="3.691905471765983"/>
+    <inertia ixx="0.004649" iyy="0.040874" izz="0.041874" ixy="-0.000197" iyz="5e-06" ixz="9.2e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.5 0.04995 -0.12" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fruit_harvester_description/meshes/link_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.5 0.04995 -0.12" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fruit_harvester_description/meshes/link_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link_3_1">
+  <inertial>
+    <origin xyz="0.02270869821128263 0.027591903502342304 0.004082924140338673" rpy="0 0 0"/>
+    <mass value="1.2255204125736512"/>
+    <inertia ixx="0.001242" iyy="0.00165" izz="0.001516" ixy="-1.1e-05" iyz="-2e-06" ixz="-1.1e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.8 0.04995 -0.12" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fruit_harvester_description/meshes/link_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.8 0.04995 -0.12" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fruit_harvester_description/meshes/link_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rev179" type="continuous">
+  <origin xyz="0.0 0.0 0.008" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="holder__1"/>
+  <axis xyz="-0.0 0.0 1.0"/>
+</joint>
+
+<joint name="Rev192" type="continuous">
+  <origin xyz="0.077608 -0.02633 0.006" rpy="0 0 0"/>
+  <parent link="grip_base_1"/>
+  <child link="grip2_1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="Rev193" type="continuous">
+  <origin xyz="0.077608 0.02767 0.006" rpy="0 0 0"/>
+  <parent link="grip_base_1"/>
+  <child link="grip1_1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="Rigid199" type="fixed">
+  <origin xyz="0.24719 1.32395 -1.494455" rpy="0 0 0"/>
+  <parent link="link_3_1"/>
+  <child link="cam_1"/>
+</joint>
+
+<joint name="Rev202" type="continuous">
+  <origin xyz="0.0 -0.04995 0.112" rpy="0 0 0"/>
+  <parent link="holder__1"/>
+  <child link="link_1_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rigid203" type="fixed">
+  <origin xyz="0.06 0.028 0.0" rpy="0 0 0"/>
+  <parent link="link_3_1"/>
+  <child link="grip_base_1"/>
+</joint>
+
+<joint name="Rev204" type="continuous">
+  <origin xyz="0.5 0.0 0.0" rpy="0 0 0"/>
+  <parent link="link_1_1"/>
+  <child link="link_2_1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev205" type="continuous">
+  <origin xyz="0.3 0.0 0.0" rpy="0 0 0"/>
+  <parent link="link_2_1"/>
+  <child link="link_3_1"/>
+  <axis xyz="0.0 -1.0 -0.0"/>
+</joint>
+
+</robot>
