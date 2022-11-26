@@ -1,0 +1,7 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/paradox/manipulator_ws/devel/lib/python3/dist-packages",
+        "/home/paradox/catkin_ws_2/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ]
+}

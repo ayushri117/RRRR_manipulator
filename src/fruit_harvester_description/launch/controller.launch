@@ -1,0 +1,9 @@
+<launch>
+
+<rosparam file="$(find fruit_harvester_description)/launch/controller.yaml" command="load"/>
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="fruit_harvester" args="Rev157_position_controller Rev167_position_controller Rev168_position_controller Slider175_position_controller Slider176_position_controller Rev179_position_controller joint_state_controller "/>
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+  <remap from="/joint_states" to="/fruit_harvester/joint_states"/>
+</node>
+
+</launch>

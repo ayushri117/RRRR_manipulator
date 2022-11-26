@@ -1,0 +1,31 @@
+fruit_harvester_controller:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers --------------------------------------
+  Rev157_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Rev157
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Rev167_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Rev167
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Rev168_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Rev168
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Slider175_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Slider175
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Slider176_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Slider176
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Rev179_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Rev179
+    pid: {p: 100.0, i: 0.01, d: 10.0}
