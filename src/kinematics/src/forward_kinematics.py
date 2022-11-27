@@ -2,6 +2,7 @@
 import rospy
 import numpy
 from sensor_msgs.msg import JointState
+from std_msgs.msg import Float64MultiArray as arr
 from math import sin,cos
 
 def tf_matrix(dh):
@@ -24,7 +25,23 @@ def callback(msg):
     transformation_matrix=numpy.identity(4)
     for val in dh_table:
         transformation_matrix=numpy.matmul(transformation_matrix,tf_matrix(val[0]))
-    print(transformation_matrix)
+    # for a in range(0,3):
+    #     for i in range(0,3):
+    #         transformation_matrix[a,i]='{:.2f}'.format(transformation_matrix[a,i])
+    float_formatter = "{:.2f}".format
+    numpy.set_printoptions(formatter={'float_kind':float_formatter})
+    x=transformation_matrix[0,3]
+    y=transformation_matrix[1,3]
+    z=transformation_matrix[2,3]
+    x=round(x,2)
+    y=round(y,2)
+    z=round(z,2)
+    pub=rospy.Publisher("coord",arr,queue_size=10)
+    ar=arr()
+    a=[x,y,z]
+    ar.data=a
+    pub.publish(ar)
+
 
     
 if __name__=="__main__":
