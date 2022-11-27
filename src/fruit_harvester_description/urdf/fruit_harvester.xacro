@@ -197,14 +197,14 @@
   <origin xyz="0.0 0.0 0.008" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="holder__1"/>
-  <axis xyz="-0.0 0.0 -1.0"/>
+  <axis xyz="-0.0 0.0 1.0"/>
 </joint>
 
 <joint name="Rev192" type="continuous">
   <origin xyz="0.077608 -0.02633 0.006" rpy="0 0 0"/>
   <parent link="grip_base_1"/>
   <child link="grip2_1"/>
-  <axis xyz="0.0 0.0 -1.0"/>
+  <axis xyz="0.0 0.0 1.0"/>
 </joint>
 
 <joint name="Rev193" type="continuous">
@@ -224,7 +224,7 @@
   <origin xyz="0.0 -0.04995 0.112" rpy="0 0 0"/>
   <parent link="holder__1"/>
   <child link="link_1_1"/>
-  <axis xyz="0.0 1.0 0.0"/>
+  <axis xyz="0.0 -1.0 0.0"/>
 </joint>
 
 <joint name="Rigid203" type="fixed">
@@ -237,14 +237,14 @@
   <origin xyz="0.5 0.0 0.0" rpy="0 0 0"/>
   <parent link="link_1_1"/>
   <child link="link_2_1"/>
-  <axis xyz="-0.0 1.0 0.0"/>
+  <axis xyz="-0.0 -1.0 0.0"/>
 </joint>
 
 <joint name="Rev205" type="continuous">
   <origin xyz="0.3 0.0 0.0" rpy="0 0 0"/>
   <parent link="link_2_1"/>
   <child link="link_3_1"/>
-  <axis xyz="0.0 1.0 -0.0"/>
+  <axis xyz="0.0 -1.0 -0.0"/>
 </joint>
 
 </robot>

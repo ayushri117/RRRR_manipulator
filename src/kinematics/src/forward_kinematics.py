@@ -18,7 +18,7 @@ def tf_matrix(dh):
 def callback(msg):
     joints=msg.position
     dh_table=numpy.matrix([[0,0,joints[0],120],
-                          [4.71238898,0,joints[3],0],
+                          [1.57079632679,0,joints[3],0],
                           [0,500,joints[4],0],
                           [0,300,joints[5],0],
                           [0,45,0,0]])
@@ -30,13 +30,14 @@ def callback(msg):
     #         transformation_matrix[a,i]='{:.2f}'.format(transformation_matrix[a,i])
     float_formatter = "{:.2f}".format
     numpy.set_printoptions(formatter={'float_kind':float_formatter})
+    print(transformation_matrix)
     x=transformation_matrix[0,3]
     y=transformation_matrix[1,3]
     z=transformation_matrix[2,3]
     x=round(x,2)
     y=round(y,2)
     z=round(z,2)
-    pub=rospy.Publisher("coord",arr,queue_size=10)
+    pub=rospy.Publisher("current",arr,queue_size=10)
     ar=arr()
     a=[x,y,z]
     ar.data=a
