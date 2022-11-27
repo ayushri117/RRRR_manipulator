@@ -17,12 +17,12 @@ def tf_matrix(dh):
 def callback(msg):
     joints=msg.position
     dh_table=numpy.matrix([[0,0,joints[0],120],
-                          [1.57079633,0,joints[3],0],
+                          [4.71238898,0,joints[3],0],
                           [0,500,joints[4],0],
                           [0,300,joints[5],0],
                           [0,45,0,0]])
     transformation_matrix=numpy.identity(4)
-    for val in reversed(dh_table):
+    for val in dh_table:
         transformation_matrix=numpy.matmul(transformation_matrix,tf_matrix(val[0]))
     print(transformation_matrix)
 
