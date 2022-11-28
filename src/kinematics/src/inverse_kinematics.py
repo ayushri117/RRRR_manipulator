@@ -20,7 +20,7 @@ def callback(msg):
             theta1=3.14159265359
         else:
             theta1=0
-    elif(x==0 and y==0):
+    elif(x==0):
         if(y>0):
             theta1=1.57079632679
         elif(y<0):
