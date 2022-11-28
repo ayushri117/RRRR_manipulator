@@ -119,7 +119,7 @@ def callback(msg):
     pub=rospy.Publisher("joint_states",JointState,queue_size=10)
     content=JointState()
     content.header=Header()
-    content.header.stamp=rospy.Time.now()
+    
     content.name=['Rev179','Rev192','Rev193','Rev202','Rev204','Rev205']
     
     content.velocity=[]
@@ -130,7 +130,7 @@ def callback(msg):
     lt2=0.0
     lt3=0.0
     lt4=0.0
-    rate=rospy.Rate(100)
+    rate=rospy.Rate(8)
     for i in theta:
         for j in i:
             if (count==1):
@@ -145,9 +145,11 @@ def callback(msg):
             elif(count==4):
                 content.position=[lt1,0,0,lt2,lt3,j]
                 lt4=j
+            content.header.stamp=rospy.Time.now()
             pub.publish(content)
-            
+            rate.sleep()
         count+=1
+    time.sleep(100)
 
 
     
