@@ -40,7 +40,7 @@ def callback(msg):
     # print(transformation_matrix)
     x=5*cos(i)*(60*cos(j+k)+100*cos(j)+9*cos(j+k+l))
     y=5*sin(i)*(60*cos(j+k)+100*cos(j)+9*cos(j+k+l))
-    z=300*sin(j+k)+45*sin(j+k+l)+500*sin(j)+120
+    z=300*sin(j+k)+45*sin(j+k+l)+500*sin(j)+200
     phi=j+k+l
     x=round(x,2)
     y=round(y,2)
