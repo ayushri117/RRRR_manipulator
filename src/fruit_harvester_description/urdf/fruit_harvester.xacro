@@ -27,7 +27,7 @@
 
 <link name="holder__1">
   <inertial>
-    <origin xyz="5.5951482468685754e-06 2.1636982915662627e-06 0.021279248953684275" rpy="0 0 0"/>
+    <origin xyz="5.5951482468685754e-06 2.1636982916106718e-06 0.021279248953684275" rpy="0 0 0"/>
     <mass value="14.078041686781889"/>
     <inertia ixx="0.123973" iyy="0.12451" izz="0.212985" ixy="2e-06" iyz="1e-06" ixz="2e-06"/>
   </inertial>
@@ -48,7 +48,7 @@
 
 <link name="grip2_1">
   <inertial>
-    <origin xyz="0.05364907931834284 -0.02177509227632217 0.007117236322113529" rpy="0 0 0"/>
+    <origin xyz="0.05364907931835394 -0.021775092276295163 0.007117236322119358" rpy="0 0 0"/>
     <mass value="0.08498904911563737"/>
     <inertia ixx="4e-05" iyy="0.000276" izz="0.000311" ixy="7.8e-05" iyz="6e-06" ixz="-1.9e-05"/>
   </inertial>
@@ -69,7 +69,7 @@
 
 <link name="grip1_1">
   <inertial>
-    <origin xyz="0.05628094029691155 0.02405132735074406 0.0073051016420821735" rpy="0 0 0"/>
+    <origin xyz="0.056280940296917104 0.024051327350769924 0.007305101642074985" rpy="0 0 0"/>
     <mass value="0.2152423048382853"/>
     <inertia ixx="0.000116" iyy="0.000682" izz="0.000786" ixy="-0.000222" iyz="-1.8e-05" ixz="-4.7e-05"/>
   </inertial>
@@ -90,7 +90,7 @@
 
 <link name="cam_1">
   <inertial>
-    <origin xyz="-0.21905808410448313 -1.2961445784866052 1.5456263497834213" rpy="0 0 0"/>
+    <origin xyz="-0.19905808410448445 -1.296144578486576 1.5456263497834613" rpy="0 0 0"/>
     <mass value="0.32739564469380616"/>
     <inertia ixx="0.000252" iyy="2.4e-05" izz="0.00025" ixy="2e-06" iyz="0.0" ixz="0.0"/>
   </inertial>
@@ -109,30 +109,9 @@
   </collision>
 </link>
 
-<link name="link_1_1">
-  <inertial>
-    <origin xyz="0.20464533177189914 0.049054440594275474 -0.0003731414926899379" rpy="0 0 0"/>
-    <mass value="8.14858833077929"/>
-    <inertia ixx="0.022502" iyy="0.25306" izz="0.261723" ixy="0.002387" iyz="0.000318" ixz="0.001677"/>
-  </inertial>
-  <visual>
-    <origin xyz="-0.0 0.04995 -0.12" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="package://fruit_harvester_description/meshes/link_1_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin xyz="-0.0 0.04995 -0.12" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="package://fruit_harvester_description/meshes/link_1_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
-
 <link name="grip_base_1">
   <inertial>
-    <origin xyz="0.07320818005315011 0.0015701009661991325 1.5001888620247428e-14" rpy="0 0 0"/>
+    <origin xyz="0.07320818005315854 0.0015701009662208061 1.1324274851176597e-14" rpy="0 0 0"/>
     <mass value="0.7312652454578921"/>
     <inertia ixx="0.000377" iyy="0.000942" izz="0.001302" ixy="4.1e-05" iyz="0.0" ixz="-0.0"/>
   </inertial>
@@ -151,11 +130,32 @@
   </collision>
 </link>
 
+<link name="link_1_1">
+  <inertial>
+    <origin xyz="0.2046453317718993 0.04905444059427462 -0.0003731414926893689" rpy="0 0 0"/>
+    <mass value="8.14858833077929"/>
+    <inertia ixx="0.022502" iyy="0.25306" izz="0.261723" ixy="0.002387" iyz="0.000318" ixz="0.001677"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 0.04995 -0.12" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fruit_harvester_description/meshes/link_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 0.04995 -0.12" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fruit_harvester_description/meshes/link_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
 <link name="link_2_1">
   <inertial>
-    <origin xyz="0.15851248323244505 -0.03327454899353218 -0.0002043351344011013" rpy="0 0 0"/>
-    <mass value="3.691905471765983"/>
-    <inertia ixx="0.004649" iyy="0.040874" izz="0.041874" ixy="-0.000197" iyz="5e-06" ixz="9.2e-05"/>
+    <origin xyz="0.15975993800658017 -0.03301644370808394 -0.00020253357023874985" rpy="0 0 0"/>
+    <mass value="3.724745482250577"/>
+    <inertia ixx="0.004679" iyy="0.04153" izz="0.042556" ixy="-0.000331" iyz="4e-06" ixz="9.1e-05"/>
   </inertial>
   <visual>
     <origin xyz="-0.5 0.04995 -0.12" rpy="0 0 0"/>
@@ -174,7 +174,7 @@
 
 <link name="link_3_1">
   <inertial>
-    <origin xyz="0.02270869821128263 0.027591903502342304 0.004082924140338673" rpy="0 0 0"/>
+    <origin xyz="0.022708698211290734 0.027591903502357792 0.004082924140336397" rpy="0 0 0"/>
     <mass value="1.2255204125736512"/>
     <inertia ixx="0.001242" iyy="0.00165" izz="0.001516" ixy="-1.1e-05" iyz="-2e-06" ixz="-1.1e-05"/>
   </inertial>
@@ -204,14 +204,14 @@
   <origin xyz="0.077608 -0.02633 0.006" rpy="0 0 0"/>
   <parent link="grip_base_1"/>
   <child link="grip2_1"/>
-  <axis xyz="0.0 0.0 1.0"/>
+  <axis xyz="0.0 -0.0 -1.0"/>
 </joint>
 
 <joint name="Rev193" type="continuous">
   <origin xyz="0.077608 0.02767 0.006" rpy="0 0 0"/>
   <parent link="grip_base_1"/>
   <child link="grip1_1"/>
-  <axis xyz="0.0 0.0 -1.0"/>
+  <axis xyz="0.0 -0.0 -1.0"/>
 </joint>
 
 <joint name="Rigid199" type="fixed">
@@ -220,31 +220,31 @@
   <child link="cam_1"/>
 </joint>
 
-<joint name="Rev202" type="continuous">
-  <origin xyz="0.0 -0.04995 0.112" rpy="0 0 0"/>
-  <parent link="holder__1"/>
-  <child link="link_1_1"/>
-  <axis xyz="0.0 -1.0 0.0"/>
-</joint>
-
 <joint name="Rigid203" type="fixed">
   <origin xyz="0.06 0.028 0.0" rpy="0 0 0"/>
   <parent link="link_3_1"/>
   <child link="grip_base_1"/>
 </joint>
 
-<joint name="Rev204" type="continuous">
+<joint name="Rev206" type="continuous">
+  <origin xyz="0.0 -0.04995 0.112" rpy="0 0 0"/>
+  <parent link="holder__1"/>
+  <child link="link_1_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="Rev207" type="continuous">
   <origin xyz="0.5 0.0 0.0" rpy="0 0 0"/>
   <parent link="link_1_1"/>
   <child link="link_2_1"/>
   <axis xyz="-0.0 -1.0 0.0"/>
 </joint>
 
-<joint name="Rev205" type="continuous">
+<joint name="Rev208" type="continuous">
   <origin xyz="0.3 0.0 0.0" rpy="0 0 0"/>
   <parent link="link_2_1"/>
   <child link="link_3_1"/>
-  <axis xyz="0.0 -1.0 -0.0"/>
+  <axis xyz="-0.0 -1.0 0.0"/>
 </joint>
 
 </robot>
