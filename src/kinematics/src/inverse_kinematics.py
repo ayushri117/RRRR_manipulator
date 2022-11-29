@@ -9,7 +9,7 @@ from math import sin,cos,atan,acos,sqrt
 
 def callback(msg):
     [x,y,z,phi]=msg.data
-    l1=120
+    l1=200
     l2=500
     l3=300
     l4=45
@@ -20,7 +20,7 @@ def callback(msg):
             theta1=3.14159265359
         else:
             theta1=0
-    elif(x==0):
+    elif(x==0 and y!=0):
         if(y>0):
             theta1=1.57079632679
         elif(y<0):
@@ -53,7 +53,7 @@ def callback(msg):
     content=JointState()
     content.header=Header()
     content.header.stamp=rospy.Time.now()
-    content.name=['Rev179','Rev192','Rev193','Rev202','Rev204','Rev205']
+    content.name=['Rev179','Rev192','Rev193','Rev206','Rev207','Rev208']
     content.position=[theta1,0,0,theta2,theta3,theta4]
     content.velocity=[]
     content.effort=[]
@@ -64,4 +64,3 @@ if __name__=="__main__":
     rospy.loginfo("Inverse KInematics node has been started")
     rospy.Subscriber("/goal",arr,callback=callback)
     rospy.spin()
-
