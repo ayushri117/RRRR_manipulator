@@ -6,8 +6,9 @@ Inverse Kinematics and Forward Kinematics have been calculated and coded.
 
 
 Workspace analysis is also performed
+![WhatsApp Image 2022-11-29 at 7 44 17 PM](https://user-images.githubusercontent.com/75618776/204552328-481ce3d1-dac1-43e6-8d5a-ef92aec6ecfa.jpeg)
 
-![workspace](https://user-images.githubusercontent.com/75618776/204551540-8942464f-b963-455c-a9a9-94716940cfe2.png)
+
 
 
 A quintic polynomial based trajectory planner has been realized, with initial and final velocity as well as acceleration are assumed to be zero.
