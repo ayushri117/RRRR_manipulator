@@ -153,6 +153,9 @@ def callback(msg):
             rate.sleep()
             
         count+=1
+        # different animation method
+        # for i in range(0,N):
+        #     content.position=[theta1[i],0,0,theta2[i],theta3[i],theta4[i]]
 
     time.sleep(100)
     
