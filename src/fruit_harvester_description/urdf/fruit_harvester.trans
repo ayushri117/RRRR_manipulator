@@ -34,34 +34,34 @@
   </actuator>
 </transmission>
 
-<transmission name="Rev202_tran">
+<transmission name="Rev206_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Rev202">
+  <joint name="Rev206">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="Rev202_actr">
+  <actuator name="Rev206_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="Rev204_tran">
+<transmission name="Rev207_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Rev204">
+  <joint name="Rev207">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="Rev204_actr">
+  <actuator name="Rev207_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="Rev205_tran">
+<transmission name="Rev208_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Rev205">
+  <joint name="Rev208">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="Rev205_actr">
+  <actuator name="Rev208_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>

@@ -17,15 +17,15 @@ fruit_harvester_controller:
     type: effort_controllers/JointPositionController
     joint: Rev193
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Rev202_position_controller:
+  Rev206_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Rev202
+    joint: Rev206
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Rev204_position_controller:
+  Rev207_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Rev204
+    joint: Rev207
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Rev205_position_controller:
+  Rev208_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Rev205
+    joint: Rev208
     pid: {p: 100.0, i: 0.01, d: 10.0}
