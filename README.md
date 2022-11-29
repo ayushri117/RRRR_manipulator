@@ -1,7 +1,7 @@
 # RRRR_manipulator
 RRRR Serial manipulator inverse and forward kinematics
 
-Inverse Kinematics and Forward Kinematics have been calculated and coded.
+Inverse Kinematics and Forward Kinematics solver has been coded in ROS.
 
 
 
