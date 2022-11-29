@@ -5,7 +5,7 @@ import time
 from std_msgs.msg import Float64MultiArray as arr
 from std_msgs.msg import Header
 from sensor_msgs.msg import JointState
-from math import sin,cos,atan,acos,sqrt
+from math import sin,cos,atan,acos,sqrt,atan2,asin
 from sympy import symbols
 
 once=False
@@ -69,7 +69,7 @@ def callback(msg):
         cy=poly*coeff_y
         cz=poly*coeff_z
         cphi=poly*coeff_phi
-        l1=200
+        l1=120
         l2=500
         l3=300
         l4=45
@@ -77,40 +77,43 @@ def callback(msg):
         y=cy[0,0]
         z=cz[0,0]
         phi=cphi[0,0]
-        if (x !=0 and y!=0):
-            calc_theta1=atan(y/x)
-        elif(x!=0 and y==0):
-            if(x<0):
-                calc_theta1=3.14159265359
-            else:
-                calc_theta1=0
-        elif(x==0):
-            if(y>0):
-                calc_theta1=1.57079632679
-            elif(y<0):
-                calc_theta1=-1.57079632679
-            elif(y==0):
-                calc_theta1=0
+        
+        calc_theta1=atan2(y,x)
+        # elif(x!=0 and y==0):
+        #     if(x<0):
+        #         calc_theta1=3.14159265359
+        #     else:
+        #         calc_theta1=0
+        # elif(x==0):
+        #     if(y>0):
+        #         calc_theta1=-1.57079632679
+        #     elif(y<0):
+        #         calc_theta1=1.57079632679
+        #     elif(y==0):
+        #         calc_theta1=0
         if (calc_theta1==1.57079632679 or calc_theta1==-1.57079632679):
-            so=abs((y/sin(calc_theta1)))
+            so=(y/sin(calc_theta1))
             A=so-l4*cos(phi)
         else:
-            sw=abs(x/cos(calc_theta1))
+            sw=(x/cos(calc_theta1))
             A=sw -l4*cos(phi)
         # A=x-l4*cos(theta1)*cos(phi)
         C=z-l1-l4*sin(phi)
-        calc_theta3=acos((A**2  +C**2 -l2**2-l3**2)/(2*l2*l3))
+        calc_theta3=asin(sqrt((2*l2*l3)**2 -(A**2  +C**2 -l2**2-l3**2)**2)/(2*l2*l3))
+        # print(f"theta3 {calc_theta3}")
         b=l3*sin(calc_theta3)
         a=l2+l3*cos(calc_theta3)
+        
         # if (theta1==1.57079632679 or theta1==-1.57079632679):
         #     c=(y/sin(theta1)) -l4*cos(phi)
         # else:
         #     c=(x/cos(theta1)) -l4*cos(phi)
-        calc_theta2=acos((a*A-b*sqrt(a**2 + b**2 -A**2))/(a**2 +b**2))
+        calc_theta2=acos((a*A+b*sqrt(a**2 + b**2 -A**2))/(a**2 +b**2))
+        # print(f"theta2 {calc_theta2}")
         calc_theta4=phi-calc_theta2-calc_theta3
-        if(calc_theta3-1.570796<1e-3 and calc_theta4<=0):
-            calc_theta3=-calc_theta3
-            calc_theta4=0
+        # if(calc_theta3-1.570796<1e-3 and calc_theta4<=0):
+        #     calc_theta3=-calc_theta3
+        #     calc_theta4=0
         theta1.append(calc_theta1)
         theta2.append(calc_theta2)
         theta3.append(calc_theta3)
@@ -119,7 +122,7 @@ def callback(msg):
     pub=rospy.Publisher("joint_states",JointState,queue_size=10)
     content=JointState()
     content.header=Header()
-    content.header.stamp=rospy.Time.now()
+    
     content.name=['Rev179','Rev192','Rev193','Rev206','Rev207','Rev208']
     
     content.velocity=[]
@@ -130,7 +133,7 @@ def callback(msg):
     lt2=0.0
     lt3=0.0
     lt4=0.0
-    rate=rospy.Rate(100)
+    rate=rospy.Rate(8)
     for i in theta:
         for j in i:
             if (count==1):
@@ -145,11 +148,13 @@ def callback(msg):
             elif(count==4):
                 content.position=[lt1,0,0,lt2,lt3,j]
                 lt4=j
+            content.header.stamp=rospy.Time.now()
             pub.publish(content)
+            rate.sleep()
             
         count+=1
 
-
+    time.sleep(100)
     
     
 

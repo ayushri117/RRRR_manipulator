@@ -12,7 +12,7 @@ if __name__=="__main__":
     N=10
     theta1_max=-3.14159265359
     theta1_min=3.14159265359
-    theta2_min=-1.570796327
+    theta2_min=0
     theta2_max=1.570796327
     theta3_min=-1.570796327
     theta3_max=1.570796327
@@ -33,12 +33,12 @@ if __name__=="__main__":
             for k in theta3:
                 for l in theta4:
                     # print(cos(i),j,k,l,sep=" ")
-                    if ( 300*sin(j+k)+45*sin(j+k+l)+500*sin(j)+200>0):
+                    if ( 300*sin(j+k)+45*sin(j+k+l)+500*sin(j)+120>0):
                         x.append(5*cos(i)*(60*cos(j+k)+100*cos(j)+9*cos(j+k+l)))
                         y.append(5*sin(i)*(60*cos(j+k)+100*cos(j)+9*cos(j+k+l)))
-                        z.append(200-300*sin(j+k)-45*sin(j+k+l)-500*sin(j))
+                        z.append(120+300*sin(j+k)+45*sin(j+k+l)+500*sin(j))
                         si.append(j+k+l)
-                        f.write(f"{5*cos(i)*(60*cos(j+k)+100*cos(j)+9*cos(j+k+l))} , {5*sin(i)*(60*cos(j+k)+100*cos(j)+9*cos(j+k+l))} , {200-300*sin(j+k)-45*sin(j+k+l)-500*sin(j)} , {j+k+l} \n")
+                        f.write(f"{5*cos(i)*(60*cos(j+k)+100*cos(j)+9*cos(j+k+l))} , {5*sin(i)*(60*cos(j+k)+100*cos(j)+9*cos(j+k+l))} , {120+300*sin(j+k)+45*sin(j+k+l)+500*sin(j)} , {j+k+l} \n")
     f.close()
     x=numpy.array(x)
     y=numpy.array(y)

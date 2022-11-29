@@ -9,7 +9,7 @@ from math import sin,cos,atan,acos,sqrt
 
 def callback(msg):
     [x,y,z,phi]=msg.data
-    l1=200
+    l1=120
     l2=500
     l3=300
     l4=45
@@ -28,13 +28,13 @@ def callback(msg):
         elif(y==0):
             theta1=0
     if (theta1==1.57079632679 or theta1==-1.57079632679):
-        so=abs((y/sin(theta1)))
+        so=((y/sin(theta1)))
         A=so-l4*cos(phi)
     else:
-        sw=abs(x/cos(theta1))
+        sw=(x/cos(theta1))
         A=sw -l4*cos(phi)
     # A=x-l4*cos(theta1)*cos(phi)
-    C=z-l1-l4*sin(phi)
+    C=z-l1+l4*sin(phi)
     theta3=acos((A**2  +C**2 -l2**2-l3**2)/(2*l2*l3))
     b=l3*sin(theta3)
     a=l2+l3*cos(theta3)
@@ -44,9 +44,9 @@ def callback(msg):
     #     c=(x/cos(theta1)) -l4*cos(phi)
     theta2=acos((a*A-b*sqrt(a**2 + b**2 -A**2))/(a**2 +b**2))
     theta4=phi-theta2-theta3
-    if(theta3-1.570796<1e-3 and theta4<=0):
-        theta3=-theta3
-        theta4=0
+    # if(theta3-1.570796<1e-3 and theta4<=0):
+    #     theta3=-theta3
+    #     theta4=0
 
     print(theta1,theta2,theta3,theta4,sep=" ")
     pub=rospy.Publisher("joint_states",JointState,queue_size=10)

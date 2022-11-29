@@ -29,6 +29,7 @@ def callback(msg):
     j=joints[3]
     k=joints[4]
     l=joints[5]
+    print(i,j,k,l,sep=" ")
     # transformation_matrix=numpy.identity(4)
     # for val in dh_table:
     #     transformation_matrix=numpy.matmul(transformation_matrix,tf_matrix(val[0]))
@@ -40,7 +41,7 @@ def callback(msg):
     # print(transformation_matrix)
     x=5*cos(i)*(60*cos(j+k)+100*cos(j)+9*cos(j+k+l))
     y=5*sin(i)*(60*cos(j+k)+100*cos(j)+9*cos(j+k+l))
-    z=300*sin(j+k)+45*sin(j+k+l)+500*sin(j)+200
+    z=300*sin(j+k)+45*sin(j+k+l)+500*sin(j)+120
     phi=j+k+l
     x=round(x,2)
     y=round(y,2)

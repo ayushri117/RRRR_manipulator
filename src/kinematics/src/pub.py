@@ -13,7 +13,7 @@ if __name__=="__main__":
     while not rospy.is_shutdown():
 
         msg=arr()
-        a=[345,0,700,0]
+        a=[303.462176637767 , 525.6119081121374 , 601.8433003754266 , 0.6981317008888885]
         msg.data=a
         pub.publish(msg)
     
